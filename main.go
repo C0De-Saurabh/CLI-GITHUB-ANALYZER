@@ -16,6 +16,17 @@ type Repo struct {
     OpenIssues   int    `json:"open_issues_count"`
     Subscribers  int    `json:"subscribers_count"`
 	Language string `json:"language"`
+	CreatedAt string `json:"created_at"`
+	UpdatedAt string `json:"updated_at"`
+	PushedAt string `json:"pushed_at"`
+	Size int `json:"size"`
+	Watchers int `json:"watchers"`
+	DefaultBranch string `json:"default_branch"`
+	HasIssues bool `json:"has_issues"`
+	HasDownloads bool `json:"has_downloads"`
+	WatchersCount int `json:"watchers_count"`
+
+
 }
 
 func fetchRepoData(repo string) (*Repo, error) {
@@ -67,4 +78,17 @@ func main() {
     fmt.Printf("Open Issues: %d\n", repoData.OpenIssues)
     fmt.Printf("Subscribers: %d\n", repoData.Subscribers)
 	fmt.Printf("Language: %s\n", repoData.Language)
+	fmt.Printf("\n\n")
+
+	fmt.Printf("CreatedAt: %s\n", repoData.CreatedAt)
+	fmt.Printf("UpdatedAt: %s\n", repoData.UpdatedAt)
+	fmt.Printf("PushedAt: %s\n", repoData.PushedAt)
+	fmt.Printf("Size: %d\n", repoData.Size)
+	fmt.Printf("Watchers: %d\n", repoData.Watchers)
+	fmt.Printf("DefaultBranch: %s\n", repoData.DefaultBranch)
+	fmt.Printf("HasIssues: %t\n", repoData.HasIssues)
+	fmt.Printf("HasDownloads: %t\n", repoData.HasDownloads)
+	fmt.Printf("WatchersCount: %d\n", repoData.WatchersCount)
+
+
 }
